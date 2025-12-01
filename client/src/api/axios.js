@@ -1,12 +1,8 @@
 import axios from "axios";
 
+// ✅ Set your backend URL as baseURL
 const API = axios.create({
-  baseURL: "http://localhost:5000/api", // must match backend
+  baseURL: "https://mmola-orthopro-site.onrender.com", // only the base URL
 });
 
 export default API;
-
-import API from "../api/axios.js";
-
-await API.post("/auth/register", { email, password });
-
