@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 
@@ -6,7 +7,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import PatientDashboard from "./pages/PatientDashboard";
-import AdminDashboard from "./pages/AdminDashboard";
+import AdminOrders from "./pages/AdminOrders";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -19,7 +21,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/patient" element={<PatientDashboard />} />
-          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin" element={<AdminOrders />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         <Footer />
@@ -29,4 +32,3 @@ function App() {
 }
 
 export default App;
-
