@@ -1,5 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 
@@ -12,7 +11,7 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <Router>
+    <>
       <Sidebar />
 
       <main style={{ marginLeft: "220px", padding: "2rem" }}>
@@ -27,8 +26,6 @@ function App() {
 
         <Footer />
       </main>
-    </Router>
+    </>
   );
 }
-
-export default App;
