@@ -1,24 +1,32 @@
-import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
 
-// Pages
 import Home from "./pages/Home";
-import Applications from "./pages/Applications";
-import OrderProgress from "./pages/OrderProgress";
-import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import PatientDashboard from "./pages/PatientDashboard";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/applications" element={<Applications />} />
-      <Route path="/order-progress" element={<OrderProgress />} />
-      <Route path="*" element={<NotFound />} />
+    <Router>
+      <Sidebar />
 
-      {/* Old URL redirect */}
-      <Route path="/home" element={<Navigate to="/" replace />} />
-    </Routes>
+      <main style={{ marginLeft: "220px", padding: "2rem" }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/patient" element={<PatientDashboard />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+        </Routes>
+
+        <Footer />
+      </main>
+    </Router>
   );
 }
 
 export default App;
+
